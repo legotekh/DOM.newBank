@@ -1,0 +1,127 @@
+/* 1. ФОН І ЦЕНТРУВАННЯ (Flexbox) */
+body {
+    margin: 0;
+    height: 100vh; /* На весь екран */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Градієнт (фіолетовий) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Магія центрування */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. КАРТКА БАНКОМАТУ */
+.atm-container {
+    background: rgba(255, 255, 255, 0.95); /* Майже білий */
+    padding: 40px;
+    border-radius: 20px; /* Закруглені кути */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Тінь, щоб картка "літала" */
+    width: 320px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Ефект при наведенні на саму картку */
+.atm-container:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* 3. ПОЛЯ ВВОДУ */
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    border-radius: 12px; /* Сильніше закруглення */
+    box-sizing: border-box; /* Щоб padding не ламав ширину */
+    font-size: 16px;
+    text-align: center;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+}
+
+/* Це для нашого JS ефекту (Focus) */
+input:focus {
+    background-color: #fff;
+    border-color: #764ba2;
+    outline: none;
+}
+
+/* 4. КНОПКИ */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s;
+}
+
+/* Кнопка "Увійти" і "Дії" - Фіолетова */
+#login-btn, #withdraw-btn, #deposit-btn {
+    background: #764ba2;
+    color: white;
+}
+
+#login-btn:hover, #withdraw-btn:hover, #deposit-btn:hover {
+    background: #5a367f;
+    transform: scale(1.02); /* Трохи збільшується */
+}
+
+/* Якщо кнопка заблокована (наша валідація) */
+button:disabled {
+    background: #ccc !important;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Кнопка Вихід - Червона (але м'яка) */
+#logout-btn {
+    background: #ff7675;
+    color: white;
+    margin-top: 20px;
+}
+
+#logout-btn:hover {
+    background: #d63031;
+}
+
+/* 5. ІСТОРІЯ ТА БАЛАНС */
+#balance-display {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2d3436;
+    display: block;
+    margin: 20px 0;
+}
+
+ul {
+    list-style: none; /* Прибираємо точки */
+    padding: 0;
+    margin-top: 20px;
+    max-height: 150px;
+    overflow-y: auto; /* Скрол, якщо багато історії */
+    text-align: left;
+}
+
+li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #636e72;
+    font-size: 14px;
+}
+
+/* Клас для приховування екранів */
+.hidden {
+    display: none !important;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM OOP Project</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+
+    <div class="atm-container">
+        <h1>🏦 Мій Банк (OOP)</h1>
+
+        <div id="login-screen">
+            <h2>Вставте картку</h2>
+            <input type="number" id="card-input" placeholder="Номер картки (2222)">
+            <input type="password" id="pin-input" placeholder="Пін-код (4321)">
+            <button id="login-btn">Увійти</button>
+            <p id="login-msg" class="message"></p>
+            <div id="currentRate" ></div>
+            <div id="currentRateEuro" ></div>
+        </div>
+
+        <div id="dashboard-screen" class="hidden">
+            <h2 id="welcome-text">Вітаємо!</h2>
+            
+            <div class="display">
+                Баланс: <span id="balance-display">---</span> грн
+                <br>
+                Баланс: <span id="balance-display-USD">---</span> USD
+            </div>
+
+            <div class="actions">
+                <input type="number" id="amount-input" placeholder="Сума">
+                <button id="withdraw-btn" disabled>Зняти готівку</button>
+                <button id="deposit-btn" disabled>Поповнити</button>
+                <button id="buyUS" disabled>купити бакси</button>
+                <button id="sellUS" disabled>продати бакси</button>
+            </div>
+
+            <button id="logout-btn" class="exit-btn">Забрати картку</button>
+            
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
