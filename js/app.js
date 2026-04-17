@@ -126,18 +126,21 @@ pinCode.addEventListener('keydown', (key) => {
 
 sum.addEventListener('input', () => {
     const getSUM = parseData (sum);
-    if(getSUM <= 0)
+    if(getSUM <= 0){
         takeCash.disabled = true;
         deposit.disabled = true;
         usd.disabled = true;
         sellUSD.disabled = true;
-    if(getSUM === "" || getSUM === null)
-        return console.log("Incorrect data")
-    if(getSUM >=1)
+    }
+    if(getSUM === "" || getSUM === null){
+        return console.log("Incorrect data");
+    }
+    if(getSUM >=1){
         takeCash.disabled = false;
         deposit.disabled = false;
         usd.disabled = false;
         sellUSD.disabled = false;
+    }
     
 })
 
